@@ -1,0 +1,18 @@
+{% extends 'posts/index.html' %}
+
+
+<title>
+    {% block title %}
+        Home
+    {% endblock title %}
+</title>
+
+
+{% block content %}
+    <div>
+        <h1>Home page</h1>
+        <div>
+            {{ data }}
+        </div>
+    </div>
+{% endblock content %}

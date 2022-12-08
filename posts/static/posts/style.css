@@ -1,0 +1,77 @@
+::before,
+::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    font-family: ubuntu, sans-serif;
+    background: rgb(179, 214, 212);
+}
+/*========
+NAVIGATION
+==========*/
+header {
+    background: rgb(233, 233, 233);
+}
+
+.nav-container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-container > .brand {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: green;
+}
+
+.nav-items-wrapper >
+.nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-items-wrapper >
+.nav-items > li > a {
+    display: inline-block;
+    padding: 2rem 1rem;
+    color: rgb(41, 41, 41);
+    letter-spacing: 0.05rem;
+}
+
+.nav-items-wrapper >
+.nav-items > li:first-child > a {
+    padding-left: 0;
+}
+
+.nav-items-wrapper >
+.nav-items > li:last-child > a {
+    padding-right: 0;
+}
+
+/*========
+INDEX.HTML
+==========*/
+.content-container {
+    width: 80%;
+    margin: 0 auto;
+}
