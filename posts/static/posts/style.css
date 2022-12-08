@@ -18,7 +18,7 @@ body {
     max-width: 1920px;
     margin: 0 auto;
     font-family: ubuntu, sans-serif;
-    background: rgb(179, 214, 212);
+    /* background: rgb(179, 214, 212); */
 }
 /*========
 NAVIGATION
@@ -74,4 +74,62 @@ INDEX.HTML
 .content-container {
     width: 80%;
     margin: 0 auto;
+}
+
+/*=======
+HOME.HTML
+=========*/
+/* .home-container {
+    border: 2px solid red;
+} */
+
+.home-container > .h1-header {
+    padding: 1rem 0;
+}
+
+.home-container >
+.posts-container {
+    /* border: 2px solid purple; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+}
+
+.home-container >
+.posts-container >
+.post-wrapper {
+    /* border: 1px solid blue; */
+    padding: 1rem;
+    border-radius: 15px;
+    background: rgb(151, 214, 151);
+}
+
+.home-container >
+.posts-container >
+.post-wrapper >
+.title {
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.05rem;
+}
+
+.home-container >
+.posts-container >
+.post-wrapper > 
+.content {
+    letter-spacing: 0.06rem;
+    line-height: 1.5;
+}
+
+.home-container >
+.posts-container >
+.post-wrapper >
+.see-detail-btn {
+    padding: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    background: orangered;
+    color: white;
+    border-radius: 10px;
+    letter-spacing: 0.05rem;
 }
