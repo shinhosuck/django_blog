@@ -15,7 +15,7 @@
             {% for post in posts %}
                 <div class="post-wrapper">
                     <h3 class="title">{{ post.title }}</h3>
-                    <p class="content">{{ post.content }}</p>
+                    <p class="content">{{ post.content|truncatewords:50 }} <span style="color:rgb(255, 115, 0)">see more</span></p>
                     <p class="author">{{ post.author.username }}</p>
                     <p class="date-created">{{ post.date_created }}</p>
                     <a href="" class="see-detail-btn">See detail</a>
