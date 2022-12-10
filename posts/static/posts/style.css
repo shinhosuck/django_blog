@@ -29,30 +29,34 @@ header {
 
 .nav-container {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* position: relative */
+}
+
+.nav-container >
+.brand-container {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.nav-container >
+.brand-container > img {
+    display: block;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-right: 0.3rem;
 }
 
 .brand-container > .brand {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    letter-spacing: 0.05rem;
-    color: green;
-}
-
-.nav-items-wrapper {
-    position: absolute;
-    z-index: 1;
-    top: 55px;
-    left: 0;
-    min-height: 100vh;
-    width: 100vw;
-    overflow-y: scroll;
-    background: rgb(144, 238, 214);
+    letter-spacing: 0.04rem;
+    color: rgb(0, 173, 116)
 }
 
 .nav-items-wrapper >
@@ -72,8 +76,29 @@ header {
     font-size: 1.3rem;
 }
 
-@media screen and (min-width: 1000px) {
+/* on mobile devices */
+@media screen and (max-width: 999px) {
     .nav-items-wrapper {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 100vw;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    /* expand navigation on mobile */
+    .show-nav-items-wrapper {
+        height: 100vh;
+        background: rgb(144, 238, 214);
+        overflow: auto;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    /* .nav-items-wrapper {
         position: initial;
         z-index: 0;
         top: initial;
@@ -82,7 +107,8 @@ header {
         width: initial;
         overflow: initial;
         background: transparent;
-    }
+        border: 1px solid red;
+    } */
     .nav-items-wrapper >
     .nav-items {
         display: flex;
@@ -96,6 +122,7 @@ header {
         padding: 2rem 1rem;
         color: rgb(41, 41, 41);
         letter-spacing: 0.05rem;
+        border: none;
     }
     
     .nav-items-wrapper >
@@ -117,7 +144,7 @@ header {
 INDEX.HTML
 ==========*/
 .content-container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 

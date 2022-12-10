@@ -14,6 +14,7 @@
     <header>
         <div class="nav-container">
             <div class="brand-container">
+                <img src="{% static 'posts/images/brand-logo.png' %}" alt="">
                 <a href="{% url 'posts:home' %}" class="brand">DjangoBlog</a>
             </div>
             <nav class="nav-items-wrapper">
@@ -53,12 +54,28 @@
 
     </footer>
     <script type="text/javascript">
-        let bar = document.querySelector('#solid-bar');
-        let body = document.querySelector('body')
+        const bar = document.querySelector('#solid-bar');
+        const body = document.querySelector('body')
+        const navItemsWrapper = document.querySelector('.nav-items-wrapper')
+
+        window.addEventListener('resize', function(){
+            if(window.innerWidth >= 1000){
+                navItemsWrapper.classList.remove('show-nav-items-wrapper')
+                // window.location.reload()
+            }
+        })
+        
+        window.addEventListener('scroll', function(){
+            navItemsWrapper.classList.remove('show-nav-items-wrapper')
+        })
+
         bar.addEventListener('click', function(){
-            body.style.overflow = 'hidden'
+            // body.style.overflow = 'hidden'
+            navItemsWrapper.classList.add('show-nav-items-wrapper')
             console.log('overflow is hidden')
         })
+
+        
     </script>
 </body>
 </html>
