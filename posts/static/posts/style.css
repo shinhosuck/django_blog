@@ -62,7 +62,7 @@ header {
 .nav-items-wrapper >
 .nav-items > li > a {
     display: block;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     color: black;
     padding: 0.5rem 0;
     text-align: center;
@@ -72,8 +72,32 @@ header {
     padding: 1rem 0;
 }
 
-.nav-buttons > i {
-    font-size: 1.3rem;
+
+.nav-buttons > 
+#solid-bar{
+    font-size: 1.5rem;
+    background: orange;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.nav-container > 
+.nav-items-wrapper > 
+.nav-items >
+.solid-xmark-container {
+    display: flex;
+    padding: 1rem;
+}
+
+.nav-container > 
+.nav-items-wrapper > 
+.nav-items > li
+#solid-xmark {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+    background: orange;
+    border-radius: 50%;
+    margin-left: auto;
 }
 
 /* on mobile devices */
@@ -85,15 +109,16 @@ header {
         left: 0;
         height: 0;
         width: 100vw;
-        overflow-y: hidden;
+        overflow: hidden;
         white-space: nowrap;
     }
 
     /* expand navigation on mobile */
     .show-nav-items-wrapper {
         height: 100vh;
-        background: rgb(144, 238, 214);
+        background: rgba(51, 51, 51, 0.95);
         overflow: auto;
+        transition: height 0.15s linear;
     }
 }
 
@@ -109,6 +134,14 @@ header {
         background: transparent;
         border: 1px solid red;
     } */
+
+    .nav-container > 
+    .nav-items-wrapper > 
+    .nav-items >
+    #solid-xmark {
+        display: none;
+    }
+
     .nav-items-wrapper >
     .nav-items {
         display: flex;
