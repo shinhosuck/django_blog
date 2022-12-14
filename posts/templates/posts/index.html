@@ -23,19 +23,19 @@
                         <i id='solid-xmark' class="fa-solid fa-xmark"></i>
                     </li>
                     {% if not request.user.is_authenticated %}
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Communities</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Register</a></li>
-                        <li><a href="">Login</a></li>
+                        <li><a class='nav-item' href="">Home</a></li>
+                        <li><a class='nav-item' href="">Communities</a></li>
+                        <li><a class='nav-item' href="">About</a></li>
+                        <li><a class='nav-item' href="">Contact</a></li>
+                        <li><a class='nav-item' href="">Register</a></li>
+                        <li><a class='nav-item' href="">Login</a></li>
                     {% else %}
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Communities</a></li>
-                        <li><a href="">Create post</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Logout</a></li>
+                        <li><a class='nav-item' href="">Home</a></li>
+                        <li><a class='nav-item' href="">Communities</a></li>
+                        <li><a class='nav-item' href="">Create post</a></li>
+                        <li><a class='nav-item' href="">About</a></li>
+                        <li><a class='nav-item' href="">Contact</a></li>
+                        <li><a class='nav-item' href="">Logout</a></li>
                     {% endif %}
                     
                 </ul>
@@ -59,11 +59,19 @@
         const xmark = document.querySelector('#solid-xmark')
         const body = document.querySelector('body')
         const navItemsWrapper = document.querySelector('.nav-items-wrapper')
+        const navItems = document.querySelectorAll('.nav-item')
+
+        for(i = 0; i < navItems.length; i++){
+            let item = navItems[i]
+            item.addEventListener('click', function(event){
+                event.currentTarget.style.background = 'rgb(0, 128, 0)'
+                console.log('touched')
+            })
+        }
 
         window.addEventListener('resize', function(){
-            if(window.innerWidth >= 1000){
+            if(window.innerWidth >= 1000 || window.innerWidth <= 1000){
                 navItemsWrapper.classList.remove('show-nav-items-wrapper')
-                // window.location.reload()
             }
         })
         
@@ -72,7 +80,6 @@
         })
 
         bar.addEventListener('click', function(){
-            // body.style.overflow = 'hidden'
             navItemsWrapper.classList.add('show-nav-items-wrapper')
             console.log('overflow is hidden')
         })

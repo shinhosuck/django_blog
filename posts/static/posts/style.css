@@ -18,13 +18,16 @@ body {
     max-width: 1920px;
     margin: 0 auto;
     font-family: ubuntu, sans-serif;
-    /* background: rgb(179, 214, 212); */
 }
 /*========
 NAVIGATION
 ==========*/
 header {
     background: rgb(233, 233, 233);
+    /* position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0; */
 }
 
 .nav-container {
@@ -51,6 +54,7 @@ header {
     margin-right: 0.3rem;
 }
 
+.nav-container >
 .brand-container > .brand {
     display: inline-block;
     font-size: 1.8rem;
@@ -59,48 +63,17 @@ header {
     color: rgb(0, 173, 116)
 }
 
+/* .nav-container >
 .nav-items-wrapper >
 .nav-items > li > a {
     display: block;
-    /* border: 1px solid blue; */
     color: black;
     padding: 0.5rem 0;
     text-align: center;
-}
-
-.nav-buttons {
-    padding: 1rem 0;
-}
+} */
 
 
-.nav-buttons > 
-#solid-bar{
-    font-size: 1.5rem;
-    background: orange;
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-
-.nav-container > 
-.nav-items-wrapper > 
-.nav-items >
-.solid-xmark-container {
-    display: flex;
-    padding: 1rem;
-}
-
-.nav-container > 
-.nav-items-wrapper > 
-.nav-items > li
-#solid-xmark {
-    font-size: 1.5rem;
-    padding: 0.3rem 0.6rem;
-    background: orange;
-    border-radius: 50%;
-    margin-left: auto;
-}
-
-/* on mobile devices */
+/* FOR MOBILE DEVICE */
 @media screen and (max-width: 999px) {
     .nav-items-wrapper {
         position: absolute;
@@ -113,32 +86,72 @@ header {
         white-space: nowrap;
     }
 
-    /* expand navigation on mobile */
+    /* js: classList.add() to expand navigation on mobile */
     .show-nav-items-wrapper {
         height: 100vh;
-        background: rgba(51, 51, 51, 0.95);
+        background: rgba(0, 0, 0, 0.95);
         overflow: auto;
         transition: height 0.15s linear;
+    }
+
+    .nav-container >
+    .nav-items-wrapper >
+    .nav-items > li > a {
+        display: block;
+        color: rgb(230, 230, 230);
+        padding: 0.7rem 0;
+        text-align: center;
+    }
+
+    @media(hover){
+        .nav-container >
+        .nav-items-wrapper >
+        .nav-items > li > a:hover {
+            background: rgb(0, 128, 0);
+        }
+    }
+
+    .nav-buttons {
+        padding: 1rem 0;
+    }
+    
+    
+    .nav-buttons > 
+    #solid-bar{
+        font-size: 1.5rem;
+        background: orange;
+        padding: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .nav-container > 
+    .nav-items-wrapper > 
+    .nav-items >
+    .solid-xmark-container {
+        display: flex;
+        padding: 1rem;
+    }
+    
+    .nav-container > 
+    .nav-items-wrapper > 
+    .nav-items > li
+    #solid-xmark {
+        font-size: 1.5rem;
+        padding: 0.3rem 0.6rem;
+        background: orange;
+        border-radius: 50%;
+        margin-left: auto;
+        cursor: pointer;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    /* .nav-items-wrapper {
-        position: initial;
-        z-index: 0;
-        top: initial;
-        left: initial;
-        min-height: initial;
-        width: initial;
-        overflow: initial;
-        background: transparent;
-        border: 1px solid red;
-    } */
-
+    
     .nav-container > 
     .nav-items-wrapper > 
     .nav-items >
-    #solid-xmark {
+    .solid-xmark-container {
         display: none;
     }
 
@@ -149,6 +162,7 @@ header {
         justify-content: flex-start;
     }
     
+    .nav-container >
     .nav-items-wrapper >
     .nav-items > li > a {
         display: inline-block;
@@ -186,6 +200,7 @@ HOME.HTML
 =========*/
 .home-container {
     padding: 2rem 0;
+    /* padding-top: 7rem; */
     padding-bottom: 3rem;
 }
 
