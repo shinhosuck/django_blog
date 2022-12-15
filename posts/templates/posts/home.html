@@ -9,16 +9,19 @@
 
 
 {% block content %}
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
     <div class="home-container">
         <h1 class="h1-header">Latest Posts</h1>
         <div class="posts-container">
             {% for post in posts %}
                 <div class="post-wrapper">
                     <h3 class="title">{{ post.title }}</h3>
-                    <p class="content">{{ post.content|truncatewords:50 }} <span style="color:rgb(255, 115, 0)">see more</span></p>
+                    <p class="content">{{ post.content|truncatewords:50 }} <span style="color:rgb(255, 0, 33)">see more</span></p>
                     <p class="author">{{ post.author.username }}</p>
                     <p class="date-created">{{ post.date_created }}</p>
-                    <a href="" class="see-detail-btn">See detail</a>
+                    <a href="{% url 'posts:post-detail' post.pk %}" class="see-detail-btn">Read more</a>
                 </div>
             {% endfor %}
         </div>

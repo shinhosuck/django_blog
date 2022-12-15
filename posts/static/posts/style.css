@@ -256,8 +256,8 @@ HOME.HTML
     padding: 1rem;
     margin-top: 1rem;
     display: inline-block;
-    background: orangered;
-    color: white;
+    background: rgb(0, 148, 128);
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     letter-spacing: 0.05rem;
 }
@@ -274,4 +274,49 @@ HOME.HTML
     .posts-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
+}
+
+/*=========
+POST DETAIL
+===========*/
+.post-detail-container {
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.post-detail-container > h1 {
+    padding: 1rem 0;
+}
+
+.post-detail-container >
+.post-detail-wrapper {
+    padding: 1rem;
+    border-radius: 15px;
+    background: rgb(151, 214, 151);
+}
+
+.post-detail-container >
+.post-detail-wrapper > 
+.title {
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.05rem;
+}
+
+.post-detail-container >
+.post-detail-wrapper > 
+.content {
+    letter-spacing: 0.06rem;
+    line-height: 1.5;
+}
+
+.post-detail-container >
+.post-detail-wrapper > 
+.reply-btn {
+    padding: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    background: rgb(0, 148, 128);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    letter-spacing: 0.05rem;
 }

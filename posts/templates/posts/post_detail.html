@@ -1,0 +1,24 @@
+{% extends 'posts/index.html' %}
+
+<title>
+    {% block title %}
+        Post detail
+    {% endblock title %}
+</title>
+
+{% block content %}
+
+    <div class="post-detail-container">
+        <h1>
+            post detail
+        </h1>
+        <div class="post-detail-wrapper">
+            <h3 class="title">{{ post.title }}</h3>
+            <p class="content">{{ post.content }}</p>
+            <p class="author">{{ post.author.username }}</p>
+            <p class="date-created">{{ post.date_created }}</p>
+            <a href="" class="reply-btn">Reply</a>
+        </div>
+    </div>
+
+{% endblock content %}

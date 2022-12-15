@@ -24,14 +24,14 @@
                         <i id='solid-xmark' class="fa-solid fa-xmark"></i>
                     </li>
                     {% if not request.user.is_authenticated %}
-                        <li><a class='nav-item' href="">Home</a></li>
+                        <li><a class='nav-item' href="{% url 'posts:home' %}">Home</a></li>
                         <li><a class='nav-item' href="">Communities</a></li>
                         <li><a class='nav-item' href="">About</a></li>
                         <li><a class='nav-item' href="">Contact</a></li>
                         <li><a class='nav-item' href="">Register</a></li>
                         <li><a class='nav-item' href="">Login</a></li>
                     {% else %}
-                        <li><a class='nav-item' href="">Home</a></li>
+                        <li><a class='nav-item' href="{% url 'posts:home' %}">Home</a></li>
                         <li><a class='nav-item' href="">Communities</a></li>
                         <li><a class='nav-item' href="">Create post</a></li>
                         <li><a class='nav-item' href="">About</a></li>
@@ -65,8 +65,9 @@
         for(i = 0; i < navItems.length; i++){
             let item = navItems[i]
             item.addEventListener('click', function(event){
-                event.currentTarget.style.background = 'rgb(0, 128, 0)'
-                console.log('touched')
+                if(window.innerWidth < 1000) {
+                    event.currentTarget.style.background = 'rgb(0, 128, 0)'
+                }
             })
         }
 
@@ -82,7 +83,6 @@
 
         bar.addEventListener('click', function(){
             navItemsWrapper.classList.add('show-nav-items-wrapper')
-            console.log('overflow is hidden')
         })
 
         xmark.addEventListener('click', function(){
