@@ -63,17 +63,15 @@ header {
     color: rgb(0, 173, 116)
 }
 
-/* .nav-container >
-.nav-items-wrapper >
-.nav-items > li > a {
-    display: block;
-    color: black;
-    padding: 0.5rem 0;
-    text-align: center;
-} */
-
-
 /* FOR MOBILE DEVICE */
+
+@media screen and (max-width: 350px) {
+    .nav-container >
+    .brand-container > .brand {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 999px) {
     .nav-items-wrapper {
         position: absolute;
@@ -89,7 +87,7 @@ header {
     /* js: classList.add() to expand navigation on mobile */
     .show-nav-items-wrapper {
         height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
+        background: rgb(100, 100, 100);
         overflow: auto;
         transition: height 0.15s linear;
     }
@@ -98,9 +96,15 @@ header {
     .nav-items-wrapper >
     .nav-items > li > a {
         display: block;
-        color: rgb(230, 230, 230);
+        color: rgb(255, 255, 255);
         padding: 0.7rem 0;
         text-align: center;
+    }
+
+    .nav-container >
+    .nav-items-wrapper >
+    .nav-items > li:nth-child(2) {
+        margin-top: 0.7rem;
     }
 
     @media(hover){
@@ -119,7 +123,7 @@ header {
     .nav-buttons > 
     #solid-bar{
         font-size: 1.5rem;
-        background: orange;
+        /* background: orange; */
         padding: 0.5rem;
         border-radius: 5px;
         cursor: pointer;
@@ -130,18 +134,23 @@ header {
     .nav-items >
     .solid-xmark-container {
         display: flex;
-        padding: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+        
+        background: rgb(88, 88, 88);
+        color: rgb(255, 255, 255);
+        font-size: 0.9rem;
+        letter-spacing: 0.05rem;
     }
     
     .nav-container > 
     .nav-items-wrapper > 
-    .nav-items > li
+    .nav-items > 
+    .solid-xmark-container
     #solid-xmark {
         font-size: 1.5rem;
-        padding: 0.3rem 0.6rem;
-        background: orange;
-        border-radius: 50%;
-        margin-left: auto;
+        color: rgb(236, 236, 236);
+        padding: 0.7rem 1rem;
         cursor: pointer;
     }
 }
