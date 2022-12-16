@@ -8,6 +8,7 @@
 
 a {
     text-decoration: none;
+    border: none;
 }
 
 li {
@@ -180,6 +181,7 @@ header {
         letter-spacing: 0.05rem;
         border: none;
     }
+    
     
     .nav-items-wrapper >
     .nav-items > li:first-child > a {
