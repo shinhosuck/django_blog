@@ -7,7 +7,6 @@
 </title>
 
 {% block content %}
-
     <div class="post-detail-container">
         <h1>
             post detail
@@ -17,8 +16,7 @@
             <p class="content">{{ post.content }}</p>
             <p class="author">{{ post.author.username }}</p>
             <p class="date-created">{{ post.date_created }}</p>
-            <a href="" class="reply-btn">Reply</a>
+            <a href="{% url 'posts:post-reply' post.pk %}" class="reply-btn">Reply</a>
         </div>
     </div>
-
 {% endblock content %}

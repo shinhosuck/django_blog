@@ -11,3 +11,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class PostReply(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
+    content = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Post replies'
+
+    def __str__(self):
+        return f'{self.user}'

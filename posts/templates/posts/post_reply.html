@@ -1,0 +1,18 @@
+{% extends 'posts/index.html' %}
+
+
+<title>
+    {% block title %}
+        Reply-{{ post }}
+    {% endblock title %}
+</title>
+
+{% block content %}
+    <div class="reply-forn-container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Reply</button>
+        </form>
+    </div>
+{% endblock content %}
