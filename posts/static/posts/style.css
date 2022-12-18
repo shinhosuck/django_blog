@@ -351,7 +351,7 @@ POST REPLY
 }
 
 .post-replied-container >
-form {
+form > div {
     background: rgb(193, 219, 164);
     border-radius: 15px;
     margin-top: 1rem; 
@@ -359,7 +359,7 @@ form {
 }
 
 .post-replied-container > 
-form > textarea {
+form > div> textarea {
     display: block;
     width: 100%;
     /* color: red; */
@@ -370,6 +370,11 @@ form > textarea {
     margin: 0.5rem 0;
     cursor: pointer;
     line-height: 1.4;
+}
+
+.post-replied-container > 
+form > div > textarea:focus {
+    outline: none;
 }
 
 .post-replied-container >
