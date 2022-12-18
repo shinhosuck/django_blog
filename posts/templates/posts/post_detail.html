@@ -18,5 +18,20 @@
             <p class="date-created">{{ post.date_created }}</p>
             <a href="{% url 'posts:post-reply' post.pk %}" class="reply-btn">Reply</a>
         </div>
+        <br>
+        <div class="post-reply-container">
+            {% if replies %}
+                {% for reply in replies %}
+                    <div class="post-reply-wrapper" style="background: rgb(0, 161, 100); padding: 1rem; color: white; 
+                    border-radius: 10px;">
+                        <h3>Re: {{ post.title }}</h3>
+                        <p>{{ reply.user.username }}</p>
+                        <p>{{ reply.content }}</p>
+                        <a href="" style="color: rgb(255, 0, 0)">Reply</a>
+                    </div>
+                    <br>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
 {% endblock content %}

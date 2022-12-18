@@ -3,15 +3,23 @@
 
 <title>
     {% block title %}
-        Reply-{{ post }}
+        Reply-{{ replied_to }}
     {% endblock title %}
 </title>
 
 {% block content %}
     <div class="reply-forn-container">
-        <form action="" method="POST">
+        <div style="border: 2px solid green">
+            <h3>{{ replied_to.title }}</h3>
+            <p>{{ replied_to.content }}</p>
+            <p>{{ replied_to.author }}</p>
+            <p>{{ replied_to.date_created }}</p>
+        </div>
+        <form action="" method="POST" style="border: 2px solid orange; margin-top: 1rem;">
             {% csrf_token %}
-            {{ form.as_p }}
+            <div style="padding: 1rem">
+                {{ form.as_p }}
+            </div>
             <button>Reply</button>
         </form>
     </div>

@@ -10,10 +10,14 @@ def home(request):
     }
     return render(request, 'posts/home.html', context)
 
+
 def post_detail(request, pk):
     try:
         post = get_object_or_404(Post, pk=pk)
+        replies = post.postreply_set.all()
+        print(replies)
         context = {
+            'replies': replies,
             'post': post
         }
         return render(request, 'posts/post_detail.html', context)
@@ -32,10 +36,11 @@ def post_reply(request, pk):
             reply.user = user
             reply.post = replied_to
             reply.save()
-        return redirect('posts:home')
+        return redirect('posts:post-detail', pk=replied_to.pk)
     else:
         form = PostReplyForm()
         context = {
+            'replied_to': replied_to,
             'form': form
         }
         return render(request, 'posts/post_reply.html', context)
