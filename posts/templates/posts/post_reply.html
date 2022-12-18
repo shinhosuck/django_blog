@@ -8,18 +8,16 @@
 </title>
 
 {% block content %}
-    <div class="reply-forn-container">
-        <div style="border: 2px solid green">
-            <h3>{{ replied_to.title }}</h3>
-            <p>{{ replied_to.content }}</p>
+    <div class="post-replied-container">
+        <div class='post-replied-wrapper'>
+            <h3 class="post-replied-title">{{ replied_to.title }}</h3>
+            <p class="post-replied-content">{{ replied_to.content }}</p>
             <p>{{ replied_to.author }}</p>
             <p>{{ replied_to.date_created }}</p>
         </div>
-        <form action="" method="POST" style="border: 2px solid orange; margin-top: 1rem;">
+        <form action="" method="POST">
             {% csrf_token %}
-            <div style="padding: 1rem">
-                {{ form.as_p }}
-            </div>
+            {{ form }}
             <button>Reply</button>
         </form>
     </div>
